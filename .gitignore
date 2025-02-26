@@ -1,0 +1,20 @@
+# Archivos de Python
+*.pyc
+*.pyo
+__pycache__
+
+# Archivos de configuración del entorno
+venv/
+*.env
+
+# Archivos estáticos y de medios
+media/
+static/
+
+# Archivos de logs
+*.log
+
+# Archivos de configuración del sistema
+.DS_Store
+Thumbs.db
+
