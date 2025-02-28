@@ -130,3 +130,27 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',  # Autenticación predeterminada
+]
+
+LOGIN_REDIRECT_URL = '/'  # Redirige a la página principal después de iniciar sesión
+LOGOUT_REDIRECT_URL = '/'  # Redirige a la página principal después de cerrar sesión
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / 'users/templates'],  # Verifica que esté configurado correctamente
+        'APP_DIRS': True,  # Asegura que Django busque en los directorios de las apps
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
