@@ -1,0 +1,33 @@
+<!-- cart/templates/cart/detail.html -->
+
+<h2>Your Shopping Cart</h2>
+
+{% if cart.items.all|length == 0 %}
+  <p>Your cart is empty.</p>
+{% else %}
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price per Unit</th>
+        <th>Total Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in cart.items.all %}
+      <tr>
+        <td>{{ item.product.nombre }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.product.precio }}</td>
+        <td>{{ item.get_total_price }}</td>
+        <td>
+          <a href="{% url 'cart_remove' item.product.id %}">Remove</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <p><strong>Total: </strong> {{ cart.get_total_price }}</p>
+{% endif %}
