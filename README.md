@@ -16,7 +16,7 @@ Version Control: Git & GitHub
 ✅ PostgreSQL database integration
 ✅ Future plans: payment integration, order management, and more!
 
-🚀 Getting Started
+🚀 Getting Startedd
 1️⃣ Clone this repository
 git clone git@github.com:benja-matteo/ecommerce-django.git
 cd ecommerce-django
